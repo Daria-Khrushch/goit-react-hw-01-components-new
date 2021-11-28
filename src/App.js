@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Profile from './components/Profile';
+import Statistics from './components/Statistics';
+import profiles from './user.json';
+import data from './data.json';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {profiles.map(profile => (
+        <Profile
+          key={profile.username}
+          avatar={profile.avatar}
+          username={profile.username}
+          tag={profile.tag}
+          location={profile.location}
+          stats={profile.stats}
+        />
+      ))}
+      <Statistics title="Upload stats" stats={data} />
+      <Statistics stats={data} />
     </div>
   );
 }
-
-export default App;
