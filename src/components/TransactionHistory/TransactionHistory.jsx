@@ -3,6 +3,7 @@ import s from './TransactionHistory.module.css';
 
 export default function TransactionHistory(props) {
   const { items } = props;
+
   return (
     <table className={s.transactionHistory}>
       <thead>

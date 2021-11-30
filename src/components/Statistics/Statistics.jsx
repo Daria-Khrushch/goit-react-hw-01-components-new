@@ -3,6 +3,7 @@ import s from './Statistics.module.css';
 
 export default function Statistics(props) {
   const { title, stats } = props;
+
   return (
     <section className={s.statistics}>
       {title && <h2 className={s.title}>Upload stats</h2>}
